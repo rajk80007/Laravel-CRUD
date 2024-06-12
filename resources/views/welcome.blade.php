@@ -825,6 +825,7 @@
         }
     </style> --}}
     @vite('resources/css/app.css')
+    @livewireStyles
 </head>
 
 <body class="antialiased">
@@ -852,6 +853,7 @@
    
 
     </div>
+    @livewireScripts
 </body>
 
 </html>
