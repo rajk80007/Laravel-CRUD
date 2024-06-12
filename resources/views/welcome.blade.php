@@ -12,7 +12,7 @@
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
 
     <!-- Styles -->
-    <style>
+    {{-- <style>
         /* ! tailwindcss v3.2.4 | MIT License | https://tailwindcss.com */
         *,
         ::after,
@@ -823,11 +823,12 @@
                 padding: 2rem
             }
         }
-    </style>
+    </style> --}}
     @vite('resources/css/app.css')
 </head>
 
 <body class="antialiased">
+    @include('components.navbar')
     <div
         class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
         @if (Route::has('login'))
@@ -847,10 +848,8 @@
                 @endauth
             </div>
         @endif
-        @include('components.navbar')
-        <div class="text-red-500 w-screen h-screen bg-gradient-to-tl from-red-200 via-red-300 to-yellow-200 dark:from-red-700 dark:via-red-800 dark:to-yellow-700">
-                Hellow
-        </div>
+       
+   
 
     </div>
 </body>
