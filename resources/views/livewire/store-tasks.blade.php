@@ -1,4 +1,4 @@
-<div class="m-2">
+<div class="m-2 w-[80%] mx-auto">
     <h2 class="text-2xl font-bold">Store Taks </h2>
     <form action="" wire:submit.prevent="savedata">
         <div>

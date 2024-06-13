@@ -1,3 +1,4 @@
 <div>
-    {{-- A good traveler has no fixed plans and is not intent upon arriving. --}}
+    @vite('resources/css/app.css')
+    @include('components.navbar')
 </div>
