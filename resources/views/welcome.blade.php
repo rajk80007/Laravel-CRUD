@@ -23,8 +23,6 @@
 
     <livewire:store-tasks />
 
-    <livewire:show-tasks />
-
     @livewireScripts
 </body>
 
