@@ -12,7 +12,7 @@ class StoreTasks extends Component
     public $status;
 
     // to be used when auth started
-    // public $user_id;
+    // public $user_id = '';
 
 
     public function render()
@@ -26,8 +26,15 @@ class StoreTasks extends Component
         $task->title = $this->title;
         $task->description = $this->description;
         $task->status = $this->status;
-        $task->save();
-
-        $this->reset(['title', 'description', 'status']);
+        if(auth()->user()){
+            
+            $task->user_id = auth()->user()->id;
+            $task->save();
+            $this->reset(['title', 'description', 'status']);
+        }
+        else
+        {
+           return redirect('/login');
+        }
     }
 }

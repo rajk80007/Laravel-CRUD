@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Livewire\Register;
 use App\Livewire\Login;
-use App\Livewire\Dashboard;
+use App\Livewire\Logout;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,4 +23,7 @@ Route::get('/', function () {
 
 // Route::get('/', Dashboard::class);
 Route::get('/register', Register::class);
+
 Route::get('/login', Login::class);
+
+Route::get('/logout', Logout::class);

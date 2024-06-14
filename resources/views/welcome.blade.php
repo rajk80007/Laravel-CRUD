@@ -19,9 +19,11 @@
 <body class="antialiased">
     @include('components.navbar')
     
-    <h1 class="text-3xl m-2 font-bold">Welcome To Task Management App</h1>
+    <h1 class="text-3xl m-10 font-bold text-center">Welcome To Task Management App</h1>
 
     <livewire:store-tasks />
+
+    <livewire:show-tasks />
 
     @livewireScripts
 </body>
