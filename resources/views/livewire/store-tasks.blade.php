@@ -28,20 +28,20 @@
 
     <div class="w-[100%] lg:w-[80%] xl:w-[60%] mx-auto bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
         <table>
-            <tr class="flex gap-3 items-center py-2 px-5 text-white border-1 border-white">
+            <tr class="flex items-center py-2 text-white ">
                 <th class="w-auto lg:w-[50px]">ID</th>
                 <th class="w-auto lg:w-[150px]">Title</th>
                 <th class="w-auto lg:w-[300px]">Description</th>
                 <th class="w-auto lg:w-[100px]">Status</th>
-                <th class="w-auto lg:w-[100px]">Action</th>
+                <th class="w-auto lg:w-[100px] ml-10">Action</th>
             </tr>
             @foreach ($task as $task)
-                <tr class="flex gap-3 items-center py-2 px-5 text-white border-1 border-white">
-                    <td class="w-auto lg:w-[50px] border-[1px] border-gray-600">{{$sno++}}</td>
-                    <td class="w-auto lg:w-[150px] border-[1px] border-gray-600">{{$task['title']}}</td>
-                    <td class="w-auto lg:w-[300px] border-[1px] border-gray-600">{{$task['description']}}</td>
-                    <td class="w-auto lg:w-[100px] text-center border-[1px] border-gray-600">{{$task->status}}</td>
-                    <td class="w-auto lg:w-[180px] flex "><a class="px-4 py-1 my-2 hover:bg-blue-600 cursor-pointer  border-2 border-blue-600 rounded-md text-sm" wire:click="updatetask({{$task['id']}})">Edit</a> <a onclick="return confirm('Do you want to delete this task? Ok to delete, Cancel to return.')" class="px-2 py-1 my-2 hover:bg-red-600 cursor-pointer mx-2 border-2 border-red-600 rounded-md text-sm" wire:click="deletetask({{$task['id']}})">Delete</a></td>
+                <tr class="flex items-center text-white ">
+                    <td class="w-auto lg:w-[50px] border-[1px] border-gray-600 py-4 px-2">{{$sno++}}</td>
+                    <td class="w-auto lg:w-[150px] border-[1px] border-gray-600 py-4 px-1">{{$task['title']}}</td>
+                    <td class="w-auto lg:w-[300px] border-[1px] border-gray-600 py-4 px-1">{{$task['description']}}</td>
+                    <td class="w-auto lg:w-[100px] text-center border-[1px] border-gray-600 py-4">{{$task->status}}</td>
+                    <td class="w-auto lg:w-[180px] flex  border-[1px] border-gray-600 py-3 px-2 justify-center"><a class="px-4 py-1  hover:bg-blue-600 cursor-pointer  border-2 border-blue-600 rounded-md text-sm" wire:click="updatetask({{$task['id']}})">Edit</a> <a onclick="return confirm('Do you want to delete this task? Ok to delete, Cancel to return.')" class="px-2 py-1  hover:bg-red-600 cursor-pointer mx-2 border-2 border-red-600 rounded-md text-sm" wire:click="deletetask({{$task['id']}})">Delete</a></td>
                 </tr>
 
             @endforeach
