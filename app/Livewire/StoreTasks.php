@@ -16,6 +16,8 @@ class StoreTasks extends Component
 
     public $update=false;
 
+    public $message = false;
+
     // to be used when auth started
     // public $user_id = '';
 
@@ -65,6 +67,12 @@ class StoreTasks extends Component
     {
         $task = task::find($id);
 
+        if($task->user_id != auth()->user()->id){
+            $this->message = true;
+            $this->mount();
+            return redirect()->with('error', 'Unauthorized');
+        }
+
         $this->s_id=$task->id;
 
         $this->name = $task->title;
@@ -87,5 +95,10 @@ class StoreTasks extends Component
         $this->resetdata();
         $this->mount();
         $this->update=false;
+    }
+    public function hidemessage()
+    {
+        $this->message = false;
+        $this->mount();
     }
 }

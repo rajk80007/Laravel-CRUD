@@ -28,6 +28,7 @@ class Register extends Component
             $user->password = bcrypt($this->password);
             $user->save();
             $this->reset(['name', 'email', 'password', 'password_confirmation']);
+            
         } else
         {
             dd('Password does not match');

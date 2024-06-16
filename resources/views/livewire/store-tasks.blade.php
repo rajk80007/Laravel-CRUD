@@ -1,4 +1,8 @@
 <div class="h-screen">
+    @if($message == true)
+    <div class="text-center bg-black text-white text-2xl">You are not authorised to this action. <span wire:click.prevent="hidemessage" class="cursor-pointer border-white border-[1px] rounded-lg m-2 p-2">x</span></div>
+
+    @endif
     @if($update==false)
     <h2 class="text-2xl font-bold text-center my-4">Store Taks  </h2>
     <form action="" wire:submit.prevent="savedata" class="m-auto w-[98%] lg:w-[50%]">
@@ -15,8 +19,8 @@
             <label for="" class="ml-2 w-[40%] font-bold scale-105 text-[#5b5b5b]">Status</label>
             <select type="text" wire:model="status" name="status" class="w-[100%] p-1 my-2 border-2 border-[#5b5b5b] rounded inline-block">
             <option value="">--Select Status--</option>
-            <option value="active">Active</option>
-            <option value="inactive">Inactive</option>
+            <option value="pending">Pending</option>
+            <option value="completed">Completed</option>
             </select>
         </div>
         <div class="m-5 text-center">
@@ -64,8 +68,8 @@
                 <label for="" class="ml-2 w-[40%] font-bold scale-105 text-[#5b5b5b]">Status</label>
                 <select type="text" wire:model="status" name="status" class="w-[100%] p-1 my-2 border-2 border-[#5b5b5b] rounded inline-block">
                 <option value="">--Select Status--</option>
-                <option value="active">Active</option>
-                <option value="inactive">Inactive</option>
+                <option value="pening">Pending</option>
+                <option value="completed">Completed</option>
                 </select>
             </div>
             <div class="m-5 text-center">
@@ -75,5 +79,7 @@
         </form>
     @endif
     
-    
+    <script>
+
+    </script>
 </div>

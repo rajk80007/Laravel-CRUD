@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title')->nullable();
             $table->string('description')->nullable();
-            $table->string('status')->nullable();
+            $table->string('status')->default('pending');
             $table->string('user_id')->nullable();
             $table->timestamps();
         });
