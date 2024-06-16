@@ -20,7 +20,7 @@
     @include('components.navbar')
     
     <h1 class="text-3xl m-10 font-bold text-center">Welcome To Task Management App</h1>
-
+       
     <livewire:store-tasks />
 
     @livewireScripts

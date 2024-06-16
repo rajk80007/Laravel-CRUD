@@ -14,6 +14,8 @@ class StoreTasks extends Component
     public $task;
     public $s_id;
 
+    
+
     public $update=false;
 
     // to be used when auth started
@@ -55,37 +57,53 @@ class StoreTasks extends Component
 
     public function deletetask($id)
     {
-        $data = task::find($id);
-        $data->delete();
-
-        $this->mount();
+        if(auth()->user()){
+            $data = task::find($id);
+            $data->delete();
+            $this->mount();
+        }
+        else
+        {
+           return redirect('/login');
+        }
+        
     }
 
     public function updatetask($id)
     {
-        $task = task::find($id);
-
-        $this->s_id=$task->id;
-
-        $this->name = $task->title;
-
-        $this->description = $task->description;
-
-        $this->status = $task->status;
-
-        $this->update=true;
-
+        if(auth()->user()){
+            $task = task::find($id);
+            $this->s_id=$task->id;
+            $this->title = $task->title;
+            $this->description = $task->description;
+            $this->status = $task->status;
+            $this->update=true;
+        }
+        else
+        {
+           return $this->redirect('/login', navigate: true);
+        }
+        
     }
 
     public function updatesave()
     {
-        $data = task::find($this->s_id);
-        $data->title = $this->title;
-        $data->description = $this->description;
-        $data->status = $this->status;
-        $data->save();
-        $this->resetdata();
-        $this->mount();
-        $this->update=false;
+        if(auth()->user()){
+            $data = task::find($this->s_id);
+            $data->title = $this->title;
+            $data->description = $this->description;
+            $data->status = $this->status;
+            $data->save();
+            $this->resetdata();
+            $this->mount();
+            $this->update=false;
+        }
+        else
+        {
+           return $this->redirect('/login', navigate: true);
+        }
+        
     }
+       
+    
 }

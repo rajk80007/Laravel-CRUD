@@ -16,7 +16,7 @@ class Login extends Component
     public function login()
     {
         if(auth()->attempt(['email' => $this->email, 'password' => $this->password])){
-            return redirect()->to('/');
+            return $this->redirect('/', navigate: true);
         }
     }
 }
