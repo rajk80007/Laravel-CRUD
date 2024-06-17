@@ -15,7 +15,7 @@
                         class="py-1 px-3 hover:font-bold duration-100 z-10 hover:w-[100%] hover:block ">Home</a></li>
                 <li class="rounded-md hover:bg-red-700 hover:w-full"><a href="/about" wire:navigate
                         class="py-1 px-3 hover:font-bold duration-200 z-10 hover:w-[100%] hover:block ">About</a></li>
-                <li class="rounded-md hover:bg-red-700 hover:w-full"><a href="#" wire:navigate
+                <li class="rounded-md hover:bg-red-700 hover:w-full"><a href="/contact" wire:navigate
                         class="py-1 px-3 hover:font-bold duration-300 z-10 hover:w-[100%] hover:block ">Contact</a></li>
             </ul>
         </div>

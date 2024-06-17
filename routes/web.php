@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Livewire\Register;
 use App\Livewire\Login;
 use App\Livewire\Logout;
+use App\Livewire\About;
+use App\Livewire\Contact;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,3 +29,7 @@ Route::get('/register', Register::class);
 Route::get('/login', Login::class);
 
 Route::get('/logout', Logout::class);
+
+Route::get('/about', About::class);
+
+Route::get('/contact', Contact::class);
